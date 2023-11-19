@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Teacher</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        form {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 400px;
+        }
+
+        h2 {
+            color: #3498db;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            text-align: left;
+        }
+
+        input {
+            width: calc(100% - 22px);
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #3498db;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #1abc9c;
+        }
+        .navigation {
+            margin-top: 20px;
+        }
+
+        .navigation a {
+            display: inline-block;
+            padding: 10px;
+            margin: 0 10px;
+            text-decoration: none;
+            color: #3498db;
+            border: 1px solid #3498db;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navigation a:hover {
+            background-color: #3498db;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <form method="post">
+        <h2>Add a New Teacher</h2>
+
+        <label for="full_name">Full Name:</label>
+        <input type="text" id="full_name" name="full_name" required>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
+
+        <label for="dob">Date of Birth (YYYY-MM-DD):</label>
+        <input type="text" id="dob" name="dob" required>
+
+        <label for="num_classes">Number of Classes:</label>
+        <input type="number" id="num_classes" name="num_classes" required>
+
+        <input type="submit" value="Add Teacher">
+    </form>
+    <div class="navigation">
+        <a href="{{ url_for('index') }}">Home</a>
+    </div>
+</body>
+</html>

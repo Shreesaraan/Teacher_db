@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtered Teachers</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h2 {
+            color: #2ecc71;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 10px 0;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .no-result {
+            color: #e74c3c;
+            margin-top: 20px;
+        }
+        .navigation {
+            margin-top: 20px;
+        }
+
+        .navigation a {
+            display: inline-block;
+            padding: 10px;
+            margin: 0 10px;
+            text-decoration: none;
+            color: #3498db;
+            border: 1px solid #3498db;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navigation a:hover {
+            background-color: #3498db;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h2>Filtered Teachers</h2>
+    {% if message %}
+        <p class="no-result">{{ message }}</p>
+    {% else %}
+        {% if teachers|length == 0 %}
+            <p class="no-result">No teachers found with the entered criteria.</p>
+        {% else %}
+            <p>Teachers that meet the filter criteria:</p>
+            <ul>
+                {% for teacher in teachers %}
+                    <li>{{ teacher.full_name }} - Number of Classes: {{ teacher.num_classes }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endif %}
+    <div class="navigation">
+        <a href="{{ url_for('index') }}">Home</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Not Found</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h2 {
+            color: #e74c3c;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .navigation {
+            margin-top: 20px;
+        }
+
+        .navigation a {
+            display: inline-block;
+            padding: 10px;
+            margin: 0 10px;
+            text-decoration: none;
+            color: #3498db;
+            border: 1px solid #3498db;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navigation a:hover {
+            background-color: #3498db;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h2>Teacher Not Found</h2>
+    <p>The specified teacher ID does not exist.</p>
+    <div class="navigation">
+        <a href="{{ url_for('index') }}">Home</a>
+    </div>
+</body>
+</html>

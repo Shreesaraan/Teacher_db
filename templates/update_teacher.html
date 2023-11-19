@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Teacher Record</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        form {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 400px;
+        }
+
+        h2 {
+            color: #e67e22;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            text-align: left;
+        }
+
+        input {
+            width: calc(100% - 22px);
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #e67e22;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #d35400;
+        }
+
+        .no-result {
+            color: #e74c3c;
+            margin-top: 20px;
+        }
+        .navigation {
+            margin-top: 20px;
+        }
+
+        .navigation a {
+            display: inline-block;
+            padding: 10px;
+            margin: 0 10px;
+            text-decoration: none;
+            color: #3498db;
+            border: 1px solid #3498db;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navigation a:hover {
+            background-color: #3498db;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <form method="post">
+        <h2>Update Teacher Record</h2>
+
+        <label for="full_name">Enter Teacher Full Name:</label>
+        <input type="text" id="full_name" name="full_name" required>
+
+        <label for="new_num_classes">Enter New Number of Classes:</label>
+        <input type="number" id="new_num_classes" name="new_num_classes" required>
+
+        <input type="submit" value="Update">
+    </form>
+
+    {% if no_teacher_found %}
+        <p class="no-result">No teacher found with the entered name.</p>
+    {% endif %}
+    <div class="navigation">
+        <a href="{{ url_for('index') }}">Home</a>
+    </div>
+</body>
+</html>
