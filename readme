@@ -8,3 +8,4 @@ The application seamlessly connects to MongoDB Atlas, establishing a robust solu
 The harmonious integration of Flask, MongoDB Atlas, and Python guarantees the scalability and maintainability of the teacher management system. 
 Flask manages routing and communication intricacies, HTML templates shape the user interface, and MongoDB Atlas handles the storage and retrieval of data. 
 This integrated approach results in a dynamic and efficient application for the comprehensive management of teacher-related information.
+The images folder has been added additionally to provide with the image clips of the application and the database.
